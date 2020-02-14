@@ -1,0 +1,143 @@
+package Cats;
+
+import java.util.Scanner;
+
+public class MM {
+    public static void main(String[] args) {
+        /*
+         * The idea is to divide the logo into triangles and to print them
+         * I have divided the first letter M into 10 triangles and
+         * I ahev added every triangle to the logo. The second M is added to the first.
+         * */
+        Scanner sc = new Scanner(System.in); // takes input
+        System.out.println("Enter an odd number between 2 and 10000");
+        int N = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            N = sc.nextInt();
+
+            if (N < 2 || N > 10000) {
+                System.out.println(" Please enter an odd number between 2 and 10000");
+            } else {
+
+                if (N % 2 == 0) {
+                    System.out.println("Please input an odd number: ");
+                } else if (N % 2 != 0) {
+                    System.out.println("Your number is " + N);
+                    break;
+                }
+            }
+        }
+
+        int rows = N;
+
+
+        for (int i = rows; i >= 0; i--) // the rows of the logo
+        {
+
+            for (int j = 0; j <= i-1; j++)  // ----     first triangle
+            {                               // ---
+                System.out.print("-");      // --
+            }                               // -
+
+            for(int j = rows; j >= i+1; j--)//    *     second triangle
+            {                               //   **
+                System.out.print("*");      //  ***
+            }                               // ****
+
+
+            for (int j = 0; j <= i-1; j++)  // **** 	third triangle
+            {                               // ***
+                System.out.print("*");      // **
+            }                               // *
+
+            for(int j = rows; j >= i+1; j--)//    -		fourth triangle
+            {                               //   --
+                System.out.print("-");      //  ---
+            }                               // ----
+
+            for(int j = i+1; j <= rows; j++)// *		fifth triangle
+            {                               // **
+                System.out.print("*");      // ***
+            }                               // ****
+
+            for (int j = 1; j <= i; j++)    // ----		sixth triangle
+            {                               //  ---
+                System.out.print("-");      //   --
+            }                               //    -
+
+            for (int j = 1; j <= i; j++)	// ****		seventh triangle
+            {                               // ***
+                System.out.print("*");      // **
+            }                               // *
+
+            for(int j = rows; j >= i+1; j--)//    -		eight triangle
+            {                               //   --
+                System.out.print("-");      //  ---
+            }                               // ----
+
+            for(int j = i+1; j <= rows; j++)// *		ninth triangle
+            {                               // **
+                System.out.print("*");      // ***
+            }                               // ****
+
+            for (int j = 1; j <= i; j++)	// ----		tenth triangle
+            {                               //  ---
+                System.out.print("-");      //   --
+            }                               //    -
+
+            //Second M
+
+            for (int j = 0; j <= i-1; j++)
+            {
+                System.out.print("-");
+            }
+
+            for(int j = rows; j >= i+1; j--)
+            {
+                System.out.print("*");
+            }
+            for (int j = 0; j <= i-1; j++)
+            {
+                System.out.print("*");
+            }
+            for(int j = rows; j >= i+1; j--)
+            {
+                System.out.print("-");
+            }
+
+            for(int j = i+1; j <= rows; j++)
+            {
+                System.out.print("*");
+            }
+
+            for (int j = 1;j <= i; j++)
+            {
+                System.out.print("-");
+            }
+
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print("*");
+            }
+
+            for(int j = rows; j >= i+1; j--)
+            {
+                System.out.print("-");
+            }
+
+            for(int j = i+1; j <= rows; j++)
+            {
+                System.out.print("*");
+            }
+
+            for (int j = 1; j <=i; j++)
+            {
+                System.out.print("-");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
